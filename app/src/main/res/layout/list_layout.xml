@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/one_rep_max"
+            android:scaleType="centerCrop"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewDesc"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            android:text="One Rep Max"
+            android:textAllCaps="true"
+            android:textColor="#ffffffff"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/textViewDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:alpha=".8"
+            android:fontFamily="sans-serif"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:text="Calculate your one-rep maxes for your squat, bench, and deadlift."
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</LinearLayout>
