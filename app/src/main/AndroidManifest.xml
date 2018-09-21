@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ORMActivity" />
-        <activity android:name=".TDEEActivity"></activity>
+        <activity android:name=".TDEEActivity" />
+        <activity android:name=".WilksActivity"></activity>
     </application>
 
 </manifest>

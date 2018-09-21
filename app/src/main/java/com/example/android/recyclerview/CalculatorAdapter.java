@@ -53,6 +53,11 @@ public class CalculatorAdapter extends RecyclerView.Adapter<CalculatorAdapter.Ca
                     Intent intent = new Intent(v.getContext(), TDEEActivity.class);
                     v.getContext().startActivity(intent);
                 }
+
+                else if (c.getId() == 3) {
+                    Intent intent = new Intent(v.getContext(), WilksActivity.class);
+                    v.getContext().startActivity(intent);
+                }
             }
         });
     }
