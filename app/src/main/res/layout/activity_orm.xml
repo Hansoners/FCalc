@@ -2,23 +2,101 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:weightSum="2" >
+    android:orientation="vertical"
+    android:weightSum="2">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_viewLeft"
-        android:layout_width="0dp"
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1" />
+        android:layout_margin="8dp"
+        >
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_viewRight"
-        android:layout_width="0dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="One Rep Max"
+                android:textColor="#222"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="Enter your weight and reps below."
+                android:textColor="#666"
+                android:textSize="16sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="97dp"
+                android:padding="20dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/weightNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight (lbs)"
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="157dp"
+                android:padding="20dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/repsNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Reps"
+                    android:textSize="15sp"
+                    android:inputType="number"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="1" />
+        android:layout_margin="8dp">
+
+
+
+            <TextView
+                android:id="@+id/ormNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title"
+                android:gravity="center"
+                android:hint="Your one rep max is..."
+                android:textSize="25sp"
+                android:padding="50dp"
+                android:textColor="#666" />
+
+    </android.support.v7.widget.CardView>
+
 
 </LinearLayout>
