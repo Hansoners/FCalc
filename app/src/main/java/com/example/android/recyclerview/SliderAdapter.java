@@ -32,13 +32,13 @@ public class SliderAdapter extends PagerAdapter {
 
     private String[] slide_headings = {
             "One Rep Max",
-            "TDEE, BMI & Ideal BW",
+            "TDEE & BMI",
             "Wilks Coefficient"
     };
 
     private String[] slide_desc = {
             "Calculate your one-rep maxes for your squat, bench, and deadlift.",
-            "Find out your TDEE, BMI, and ideal bodyweight.",
+            "Find out your TDEE, and Body Mass Index.",
             "See where you stand relative to other lifters with your Wilks coefficient."
     };
 

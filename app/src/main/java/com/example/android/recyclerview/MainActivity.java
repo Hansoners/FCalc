@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
         calculatorList.add(
                 new Calculator(
                         2,
-                        "TDEE, BMI & Ideal BW",
-                        "Find out your TDEE, BMI, and ideal bodyweight.",
+                        "TDEE & BMI",
+                        "Find out your TDEE and Body Mass Index.",
                         R.drawable.tdee));
 
         calculatorList.add(
                 new Calculator(
                         3,
                         "Wilks Coefficient",
-                        "See where you stand relative to other lifters with your Wilks coefficient",
+                        "See where you stand relative to other lifters with your Wilks coefficient.",
                         R.drawable.wilks));
 
         adapter = new CalculatorAdapter(this, calculatorList);
