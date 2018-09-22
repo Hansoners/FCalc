@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerView</string>
+    <string name="app_name">FCalc+</string>
     <string-array name="gender">
         <item>Male</item>
         <item>Female</item>

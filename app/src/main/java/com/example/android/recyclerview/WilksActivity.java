@@ -18,6 +18,7 @@ public class WilksActivity extends AppCompatActivity {
     int deadlift = 0;
     int bench = 0;
     int weight = 0;
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,12 @@ public class WilksActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
+
             @Override
             public void afterTextChanged(Editable editable) {
                 if (!edSquat.getText().toString().matches("")) {
                     squat = Integer.parseInt(edSquat.getText().toString());
+                    count++;
                 }
             }
         });
@@ -58,6 +61,7 @@ public class WilksActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (!edBench.getText().toString().matches("")) {
                     bench = Integer.parseInt(edBench.getText().toString());
+                    count++;
                 }
             }
 
@@ -77,6 +81,7 @@ public class WilksActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (!edDeadlift.getText().toString().matches("")) {
                     deadlift = Integer.parseInt(edDeadlift.getText().toString());
+                    count++;
                 }
             }
 
@@ -101,6 +106,7 @@ public class WilksActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 if (!edWeight.getText().toString().matches("")) {
                     weight = Integer.parseInt(edWeight.getText().toString());
+                    count++;
                 }
             }
         });
@@ -111,15 +117,17 @@ public class WilksActivity extends AppCompatActivity {
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                InputMethodManager inputManager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (count >= 4) {
+                    InputMethodManager inputManager = (InputMethodManager)
+                            getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
 
-                double wilks = 0;
-                wilks = calculateWilks(weight, squat, bench, deadlift);
-                tvWilks.setText("" + wilks);
+                    double wilks = 0;
+                    wilks = calculateWilks(weight, squat, bench, deadlift);
+                    tvWilks.setText("" + wilks);
+                }
             }
         });
 
@@ -134,8 +142,8 @@ public class WilksActivity extends AppCompatActivity {
         double e = 7.01863E-06;
         double f = -1.291E-08;
         double x = w / 2.20462;
-        double coeff = 500 / (a + (b*x) + (c* Math.pow(x, 2))+ (d* Math.pow(x, 3))
-                + (e* Math.pow(x, 4)) + (f* Math.pow(x, 5)));
+        double coeff = 500 / (a + (b * x) + (c * Math.pow(x, 2)) + (d * Math.pow(x, 3))
+                + (e * Math.pow(x, 4)) + (f * Math.pow(x, 5)));
         Toast.makeText(WilksActivity.this, "" + weight, Toast.LENGTH_LONG).show();
         return coeff * total;
     }
