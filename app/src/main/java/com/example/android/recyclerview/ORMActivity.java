@@ -85,6 +85,7 @@ public class ORMActivity extends AppCompatActivity implements TextWatcher {
     }
 
     public float calculateMax(float weight, float reps) {
+        if (reps == 1) return weight;
         return (weight * (1 + reps/30));
     }
 }
