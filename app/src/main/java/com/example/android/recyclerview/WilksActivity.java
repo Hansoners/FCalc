@@ -26,6 +26,7 @@ public class WilksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wilks);
 
         final TextView tvWilks = (TextView) findViewById(R.id.tvWilks);
+        final TextView tvLevel = (TextView) findViewById(R.id.tvSkill);
         final TextInputEditText edSquat = (TextInputEditText) findViewById(R.id.squatNum);
         final TextInputEditText edBench = (TextInputEditText) findViewById(R.id.benchNum);
         final TextInputEditText edDeadlift = (TextInputEditText) findViewById(R.id.deadliftNum);
@@ -116,6 +117,7 @@ public class WilksActivity extends AppCompatActivity {
 
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                double wilks = 0;
 
                 if (count >= 4) {
                     InputMethodManager inputManager = (InputMethodManager)
@@ -124,10 +126,30 @@ public class WilksActivity extends AppCompatActivity {
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
 
-                    double wilks = 0;
                     wilks = calculateWilks(weight, squat, bench, deadlift);
                     tvWilks.setText("" + round(wilks,1));
+
+                    if (wilks <= 120) {
+                        tvLevel.setText("Un-trained");
+                    }
+
+                    else if (wilks <= 200) {
+                        tvLevel.setText("Novice");
+                    }
+
+                    else if (wilks <= 238) {
+                        tvLevel.setText("Intermediate");
+                    }
+
+                    else if (wilks <= 326) {
+                        tvLevel.setText("Advanced");
+                    }
+
+                    else if (wilks <= 414) {
+                        tvLevel.setText("Elite");
+                    }
                 }
+
             }
         });
 

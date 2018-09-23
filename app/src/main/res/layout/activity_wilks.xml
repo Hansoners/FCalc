@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:weightSum="2">
 
@@ -40,7 +42,7 @@
                     android:layout_below="@+id/title"
                     android:maxLines="3"
                     android:padding="10dp"
-                    android:text="Enter your lifts below."
+                    android:text="Enter your one-rep maxes below."
                     android:textColor="#666"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -119,7 +121,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/card_view2"
+        android:id="@+id/card_view3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
@@ -128,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,6 +169,49 @@
         </LinearLayout>
 
 
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/skillTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:padding="8dp"
+                    android:text="Level"
+                    android:textColor="#222"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSkill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:maxLines="3"
+                    android:padding="10dp"
+                    android:text="Your Skill Level"
+                    android:textColor="#666"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 
 
