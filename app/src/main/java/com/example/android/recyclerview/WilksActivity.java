@@ -145,7 +145,7 @@ public class WilksActivity extends AppCompatActivity {
                         tvLevel.setText("Advanced");
                     }
 
-                    else if (wilks <= 414) {
+                    else {
                         tvLevel.setText("Elite");
                     }
                 }

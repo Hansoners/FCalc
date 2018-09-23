@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 new Calculator(
                         2,
                         "TDEE & BMI",
-                        "Find out your TDEE and Body Mass Index.",
+                        "Find out your Total Daily Energy Expenditure and Body Mass Index.",
                         R.drawable.tdee));
 
         calculatorList.add(
