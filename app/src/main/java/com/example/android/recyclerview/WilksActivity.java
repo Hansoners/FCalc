@@ -126,7 +126,7 @@ public class WilksActivity extends AppCompatActivity {
 
                     double wilks = 0;
                     wilks = calculateWilks(weight, squat, bench, deadlift);
-                    tvWilks.setText("" + wilks);
+                    tvWilks.setText("" + round(wilks,1));
                 }
             }
         });
@@ -146,5 +146,10 @@ public class WilksActivity extends AppCompatActivity {
                 + (e * Math.pow(x, 4)) + (f * Math.pow(x, 5)));
 
         return coeff * total;
+    }
+
+    private static double round (double value, int precision) {
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
     }
 }

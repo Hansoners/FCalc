@@ -56,7 +56,7 @@ public class ORMActivity extends AppCompatActivity implements TextWatcher {
             }
 
             float max = calculateMax(weight, reps);
-            ormText.setText("" + max);
+            ormText.setText("" + round(max, 2) + " lbs");
             editText1.addTextChangedListener(this);
 
         } else if (editText2.getText().hashCode() == editable.hashCode()) {
@@ -74,7 +74,7 @@ public class ORMActivity extends AppCompatActivity implements TextWatcher {
                 weight = Integer.parseInt(editText1.getText().toString());
             }
             float max = calculateMax(weight, reps);
-            ormText.setText("" + max);
+            ormText.setText("" + round(max, 2) + " lbs");
             editText2.addTextChangedListener(this);
         }
     }
@@ -87,6 +87,11 @@ public class ORMActivity extends AppCompatActivity implements TextWatcher {
     public float calculateMax(float weight, float reps) {
         if (reps == 1) return weight;
         return (weight * (1 + reps/30));
+    }
+
+    private static double round (double value, int precision) {
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
     }
 }
 
